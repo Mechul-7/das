@@ -198,7 +198,7 @@ if (reversed == null) { reversed = false; }
 
 	// Katman_1
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f("#6666FF").s().p("An8H9IAAv5IP5AAIAAP5g");
+	this.shape.graphics.f("#FFFFFF").s().p("An8H9IAAv5IP5AAIAAP5g");
 	this.shape.setTransform(0.025,0.025);
 
 	this.timeline.addTween(cjs.Tween.get(this.shape).wait(4));
@@ -230,19 +230,15 @@ if (reversed == null) { reversed = false; }
 
 	// Katman_1
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Ar/mvIX/AAIAANfI3/AAg");
+	this.shape.graphics.f("#FFFFFF").s().p("Ar/GwIAAtfIX/AAIAANfg");
 	this.shape.setTransform(0,0.025);
 
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("#6666FF").s().p("Ar/GwIAAtfIX/AAIAANfg");
-	this.shape_1.setTransform(0,0.025);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).to({state:[{t:this.shape_1},{t:this.shape}]},1).to({state:[{t:this.shape_1},{t:this.shape}]},1).to({state:[{t:this.shape_1},{t:this.shape}]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(4));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-77.8,-44.1,155.6,88.30000000000001);
+p.nominalBounds = new cjs.Rectangle(-76.8,-43.1,153.6,86.30000000000001);
 
 
 (lib.Sembol1 = function(mode,startPosition,loop,reversed) {
@@ -366,8 +362,10 @@ if (reversed == null) { reversed = false; }
 		
 		this.stop();
 		
-		/* Kareye Gitmek ve Durdurmak için Tıklat
-		Belirtilen sembol örneğini tıklattığınızda oynatma kafası zaman çizelgesinde belirtilen kareye gider ve film durdurulur.
+		
+		
+		/* Kareye Gitmek ve Oynatmak için Tıklat
+		Belirtilen sembol örneğini tıklattığınızda oynatma kafası zaman çizelgesinde belirtilen kareye gider ve oynatmaya bu kareden devam edilir.
 		Ana zaman çizelgesi veya film klibi zaman çizelgeleri üzerinde kullanılabilir.
 		
 		Talimatlar:
@@ -375,35 +373,16 @@ if (reversed == null) { reversed = false; }
 		2. EaselJS'de kare numaraları 1 yerine 0 ile başlar
 		*/
 		
+		this.button_3.addEventListener("click", fl_ClickToGoToAndPlayFromFrame.bind(this));
 		
-		this.button_3.addEventListener("click", fl_ClickToGoToAndStopAtFrame_3.bind(this));
-		
-		function fl_ClickToGoToAndStopAtFrame_3()
+		function fl_ClickToGoToAndPlayFromFrame()
 		{
-			this.gotoAndStop(1);
-		}
-	}
-	this.frame_1 = function() {
-		/* Kareye Gitmek ve Durdurmak için Tıklat
-		Belirtilen sembol örneğini tıklattığınızda oynatma kafası zaman çizelgesinde belirtilen kareye gider ve film durdurulur.
-		Ana zaman çizelgesi veya film klibi zaman çizelgeleri üzerinde kullanılabilir.
-		
-		Talimatlar:
-		1. Sembol örneği tıklatıldığında oynatma kafasının gitmesini istediğiniz kare numarasını aşağıdaki kodda bulunan 5 sayısının yerine girin.
-		2. EaselJS'de kare numaraları 1 yerine 0 ile başlar
-		*/
-		
-		
-		this.button_4.addEventListener("click", fl_ClickToGoToAndStopAtFrame_4.bind(this));
-		
-		function fl_ClickToGoToAndStopAtFrame_4()
-		{
-			this.gotoAndStop(0);
+			this.gotoAndPlay(1);
 		}
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(60));
 
 	// Katman_1
 	this.button_3 = new lib.Sembol4();
@@ -412,22 +391,17 @@ if (reversed == null) { reversed = false; }
 	new cjs.ButtonHelper(this.button_3, 0, 1, 2, false, new lib.Sembol4(), 3);
 
 	this.instance = new lib.kdrimage441();
-	this.instance.setTransform(104,-68,0.2413,0.2413);
+	this.instance.setTransform(76,-53,0.2413,0.2413);
 
 	this.instance_1 = new lib.CachedBmp_14();
-	this.instance_1.setTransform(224.6,-65.3,0.3631,0.3631);
+	this.instance_1.setTransform(196.6,-54.8,0.3631,0.3631);
 
-	this.button_4 = new lib.Sembol4();
-	this.button_4.name = "button_4";
-	this.button_4.alpha = 0;
-	new cjs.ButtonHelper(this.button_4, 0, 1, 2, false, new lib.Sembol4(), 3);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.button_3}]}).to({state:[{t:this.button_4},{t:this.instance_1},{t:this.instance}]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.button_3}]}).to({state:[{t:this.instance_1},{t:this.instance}]},1).wait(59));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-50.8,-68,582.9,118.9);
+p.nominalBounds = new cjs.Rectangle(-50.8,-54.8,554.9,108.9);
 
 
 // stage content:
@@ -557,38 +531,35 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this.button_2).wait(1).to({_off:false},0).wait(1));
 
 	// saniye
-	this.instance = new lib.Sembol3();
-	this.instance.setTransform(75.7,1006.9,1.3772,1.3772);
-
 	this.button_1 = new lib.Sembol2();
 	this.button_1.name = "button_1";
-	this.button_1.setTransform(542.85,466.1,7.0628,11.024,0,0,0,0.4,0.5);
+	this.button_1.setTransform(542.85,609.25,7.0628,11.024,0,0,0,0.4,0.5);
 	this.button_1.alpha = 0;
 	new cjs.ButtonHelper(this.button_1, 0, 1, 2, false, new lib.Sembol2(), 3);
 
-	this.gun_txt = new cjs.Text("", "140px 'Great Vibes'", "#6666FF");
+	this.gun_txt = new cjs.Text("", "140px 'Great Vibes'", "#333399");
 	this.gun_txt.name = "gun_txt";
 	this.gun_txt.textAlign = "center";
 	this.gun_txt.lineHeight = 247;
 	this.gun_txt.lineWidth = 1036;
 	this.gun_txt.parent = this;
-	this.gun_txt.setTransform(534.8,594);
+	this.gun_txt.setTransform(534.8,623.65);
 
-	this.tarih_txt = new cjs.Text("", "140px 'Great Vibes'", "#6666FF");
+	this.tarih_txt = new cjs.Text("", "140px 'Great Vibes'", "#333399");
 	this.tarih_txt.name = "tarih_txt";
 	this.tarih_txt.textAlign = "center";
 	this.tarih_txt.lineHeight = 247;
 	this.tarih_txt.lineWidth = 1061;
 	this.tarih_txt.parent = this;
-	this.tarih_txt.setTransform(547.3,361.95);
+	this.tarih_txt.setTransform(547.3,406.1);
 
-	this.saat_txt = new cjs.Text("", "140px 'Great Vibes'", "#6666FF");
+	this.saat_txt = new cjs.Text("", "140px 'Great Vibes'", "#333399");
 	this.saat_txt.name = "saat_txt";
 	this.saat_txt.textAlign = "center";
 	this.saat_txt.lineHeight = 247;
 	this.saat_txt.lineWidth = 1054;
 	this.saat_txt.parent = this;
-	this.saat_txt.setTransform(528.85,121.2);
+	this.saat_txt.setTransform(528.85,178.8);
 
 	this.saniye = new lib.saniye();
 	this.saniye.name = "saniye";
@@ -596,7 +567,7 @@ if (reversed == null) { reversed = false; }
 	this.saniye.alpha = 0.75;
 	this.saniye.compositeOperation = "darken";
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.saat_txt},{t:this.tarih_txt},{t:this.gun_txt},{t:this.button_1},{t:this.instance}]}).to({state:[{t:this.saniye}]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.saat_txt},{t:this.tarih_txt},{t:this.gun_txt},{t:this.button_1}]}).to({state:[{t:this.saniye}]},1).wait(1));
 
 	// dakika
 	this.dakika = new lib.dakika();
@@ -617,115 +588,113 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this.saat).wait(1).to({_off:false},0).wait(1));
 
 	// cerceve
-	this.instance_1 = new lib.CachedBmp_13();
-	this.instance_1.setTransform(665.9,166.9,0.5,0.5);
+	this.instance = new lib.CachedBmp_13();
+	this.instance.setTransform(665.9,166.9,0.5,0.5);
 
-	this.instance_2 = new lib.CachedBmp_12();
-	this.instance_2.setTransform(777.2,289.6,0.5,0.5);
+	this.instance_1 = new lib.CachedBmp_12();
+	this.instance_1.setTransform(777.2,289.6,0.5,0.5);
 
-	this.instance_3 = new lib.CachedBmp_11();
-	this.instance_3.setTransform(821.85,626.6,0.5,0.5);
+	this.instance_2 = new lib.CachedBmp_11();
+	this.instance_2.setTransform(821.85,626.6,0.5,0.5);
 
-	this.instance_4 = new lib.CachedBmp_10();
-	this.instance_4.setTransform(712.1,757.25,0.5,0.5);
+	this.instance_3 = new lib.CachedBmp_10();
+	this.instance_3.setTransform(712.1,757.25,0.5,0.5);
 
-	this.instance_5 = new lib.CachedBmp_9();
-	this.instance_5.setTransform(333.4,765.45,0.5,0.5);
+	this.instance_4 = new lib.CachedBmp_9();
+	this.instance_4.setTransform(333.4,765.45,0.5,0.5);
 
-	this.instance_6 = new lib.CachedBmp_8();
-	this.instance_6.setTransform(196.2,651.65,0.5,0.5);
+	this.instance_5 = new lib.CachedBmp_8();
+	this.instance_5.setTransform(196.2,651.65,0.5,0.5);
 
-	this.instance_7 = new lib.CachedBmp_7();
-	this.instance_7.setTransform(192.9,296.75,0.5,0.5);
+	this.instance_6 = new lib.CachedBmp_7();
+	this.instance_6.setTransform(192.9,296.75,0.5,0.5);
 
-	this.instance_8 = new lib.CachedBmp_6();
-	this.instance_8.setTransform(326.8,161.3,0.5,0.5);
+	this.instance_7 = new lib.CachedBmp_6();
+	this.instance_7.setTransform(326.8,161.3,0.5,0.5);
 
-	this.instance_9 = new lib.CachedBmp_5();
-	this.instance_9.setTransform(863.4,464.9,0.5,0.5);
+	this.instance_8 = new lib.CachedBmp_5();
+	this.instance_8.setTransform(863.4,464.9,0.5,0.5);
 
-	this.instance_10 = new lib.CachedBmp_4();
-	this.instance_10.setTransform(136.55,464.9,0.5,0.5);
+	this.instance_9 = new lib.CachedBmp_4();
+	this.instance_9.setTransform(136.55,464.9,0.5,0.5);
 
-	this.instance_11 = new lib.CachedBmp_3();
-	this.instance_11.setTransform(502.8,812.3,0.5,0.5);
+	this.instance_10 = new lib.CachedBmp_3();
+	this.instance_10.setTransform(502.8,812.3,0.5,0.5);
 
-	this.instance_12 = new lib.CachedBmp_2();
-	this.instance_12.setTransform(483.3,115.6,0.5,0.5);
+	this.instance_11 = new lib.CachedBmp_2();
+	this.instance_11.setTransform(483.3,115.6,0.5,0.5);
+
+	this.instance_12 = new lib.Symbol1("synched",0);
+	this.instance_12.setTransform(539.8,540.3,2.5676,2.5675,0,-134.1979,-134.1255,178.7,187.3);
+	this.instance_12.alpha = 0.1484;
 
 	this.instance_13 = new lib.Symbol1("synched",0);
-	this.instance_13.setTransform(539.8,540.3,2.5676,2.5675,0,-134.1979,-134.1255,178.7,187.3);
+	this.instance_13.setTransform(540.35,539.6,2.5675,2.5675,0,45.0698,45.1416,178.7,187.2);
 	this.instance_13.alpha = 0.1484;
 
 	this.instance_14 = new lib.Symbol1("synched",0);
-	this.instance_14.setTransform(540.35,539.6,2.5675,2.5675,0,45.0698,45.1416,178.7,187.2);
+	this.instance_14.setTransform(540.3,540.55,2.5677,2.5675,0,133.0488,132.9765,178.8,187.2);
 	this.instance_14.alpha = 0.1484;
 
 	this.instance_15 = new lib.Symbol1("synched",0);
-	this.instance_15.setTransform(540.3,540.55,2.5677,2.5675,0,133.0488,132.9765,178.8,187.2);
+	this.instance_15.setTransform(539.95,540,2.5676,2.5676,0,-44.9636,-45.0364,178.7,187.4);
 	this.instance_15.alpha = 0.1484;
 
 	this.instance_16 = new lib.Symbol1("synched",0);
-	this.instance_16.setTransform(539.95,540,2.5676,2.5676,0,-44.9636,-45.0364,178.7,187.4);
+	this.instance_16.setTransform(540.3,540.2,2.5694,2.5661,90,0,0,178.8,187.3);
 	this.instance_16.alpha = 0.1484;
 
 	this.instance_17 = new lib.Symbol1("synched",0);
-	this.instance_17.setTransform(540.3,540.2,2.5694,2.5661,90,0,0,178.8,187.3);
+	this.instance_17.setTransform(539.95,540.1,2.5694,2.5661,-90,0,0,178.7,187.4);
 	this.instance_17.alpha = 0.1484;
 
 	this.instance_18 = new lib.Symbol1("synched",0);
-	this.instance_18.setTransform(539.95,540.1,2.5694,2.5661,-90,0,0,178.7,187.4);
+	this.instance_18.setTransform(540.1,540.3,2.5661,2.5694,180,0,0,178.7,187.3);
 	this.instance_18.alpha = 0.1484;
 
 	this.instance_19 = new lib.Symbol1("synched",0);
-	this.instance_19.setTransform(540.1,540.3,2.5661,2.5694,180,0,0,178.7,187.3);
+	this.instance_19.setTransform(540.2,540.15,2.5661,2.5694,0,0,0,178.8,187.5);
 	this.instance_19.alpha = 0.1484;
 
-	this.instance_20 = new lib.Symbol1("synched",0);
-	this.instance_20.setTransform(540.2,540.15,2.5661,2.5694,0,0,0,178.8,187.5);
-	this.instance_20.alpha = 0.1484;
+	this.instance_20 = new lib.CachedBmp_1();
+	this.instance_20.setTransform(52.5,51.8,0.5,0.5);
 
-	this.instance_21 = new lib.CachedBmp_1();
-	this.instance_21.setTransform(52.5,51.8,0.5,0.5);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_20},{t:this.instance_19},{t:this.instance_18},{t:this.instance_17},{t:this.instance_16},{t:this.instance_15},{t:this.instance_14},{t:this.instance_13},{t:this.instance_12},{t:this.instance_11},{t:this.instance_10},{t:this.instance_9},{t:this.instance_8},{t:this.instance_7},{t:this.instance_6},{t:this.instance_5},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]},1).wait(1));
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance_21},{t:this.instance_20},{t:this.instance_19},{t:this.instance_18},{t:this.instance_17},{t:this.instance_16},{t:this.instance_15},{t:this.instance_14},{t:this.instance_13},{t:this.instance_12},{t:this.instance_11},{t:this.instance_10},{t:this.instance_9},{t:this.instance_8},{t:this.instance_7},{t:this.instance_6},{t:this.instance_5},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]},1).wait(1));
+	// alt
+	this.instance_21 = new lib.Sembol3();
+	this.instance_21.setTransform(70.05,70.05,1.3772,1.3772);
 
-	// BG
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("#FFFFFF").s().p("EhYNBYOMAAAiwbMCwcAAAMAAACwbg");
-	this.shape.setTransform(533.05,538.8);
-	this.shape._off = true;
-
-	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1).to({_off:false},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_21).wait(2));
 
 	// stageBackground
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("rgba(0,0,0,0)").ss(1,1,1,3,true).p("EhV7hV7MCr3AAAMAAACr3Mir3AAAg");
+	this.shape.setTransform(540,540);
+
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("rgba(0,0,0,0)").ss(1,1,1,3,true).p("EhV7hV7MCr3AAAMAAACr3Mir3AAAg");
+	this.shape_1.graphics.f("#FFFFFF").s().p("EhV7BV8MAAAir3MCr3AAAMAAACr3g");
 	this.shape_1.setTransform(540,540);
 
-	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("#000000").s().p("EhV7BV8MAAAir3MCr3AAAMAAACr3g");
-	this.shape_2.setTransform(540,540);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1}]}).wait(2));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(2));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(508.4,514.2,589.3000000000001,589.3);
+p.nominalBounds = new cjs.Rectangle(529,529,562,562);
 // library properties:
 lib.properties = {
 	id: 'E64733B41E51C4488E85AB67E238EE62',
 	width: 1080,
 	height: 1080,
 	fps: 60,
-	color: "#000000",
+	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/Saat_atlas_1.png", id:"Saat_atlas_1"},
-		{src:"images/Saat_atlas_2.png", id:"Saat_atlas_2"},
-		{src:"sounds/interface124464.mp3", id:"interface124464"},
-		{src:"sounds/multipop6188170wav.mp3", id:"multipop6188170wav"}
+		{src:"images/Saat_atlas_1.png?1790174129882", id:"Saat_atlas_1"},
+		{src:"images/Saat_atlas_2.png?1790174129882", id:"Saat_atlas_2"},
+		{src:"sounds/interface124464.mp3?1790174129936", id:"interface124464"},
+		{src:"sounds/multipop6188170wav.mp3?1790174129936", id:"multipop6188170wav"}
 	],
 	preloads: []
 };
